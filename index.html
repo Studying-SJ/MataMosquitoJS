@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Inicio do Game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="d-flex justify-content-center">
+					<img src="img/game.png">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="d-flex justify-content-center">
+					<div class="mb-2">
+						<select id="nivel_game" class="form-control">
+							<option value="">-- Selecione o nível --</option>
+							<option value="normal">Normal</option>
+							<option value="dificil">Dificil</option>
+							<option value="chucknorris">Chuck Norris</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="d-flex justify-content-center">
+					<button type="button" class="btn btn-danger btn-lg" onclick="iniciarJogo()">Iniciar Game</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function iniciarJogo(){
+			var nivel = document.getElementById('nivel_game').value
+			if(nivel == ''){
+				alert("Selecione um nícel para começar a jogar!");
+				return false;
+			}
+			window.location.href = "appMosca.html?"+nivel;
+		}
+	</script>
+</body>
+</html>
